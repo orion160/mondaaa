@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+
+  <!-- Online Store -->
+  <persistence-unit name="OnlineStore">
+    <class>mydomain.samples.metadata.store.Product</class>
+    <class>mydomain.samples.metadata.store.Book</class>
+    <class>mydomain.samples.metadata.store.CompactDisc</class>
+    <class>mydomain.samples.metadata.store.Customer</class>
+    <class>mydomain.samples.metadata.store.Supplier</class>
+    <exclude-unlisted-classes/>
+    <properties>
+      <property name="datanucleus.ConnectionURL" value="jdbc:h2:mem:datanucleus"/>
+      <property name="datanucleus.ConnectionUserName" value="sa"/>
+      <property name="datanucleus.ConnectionPassword" value=""/>
+    </properties>
+  </persistence-unit>
+
+  <persistence-unit name="Parranderos">
+    <exclude-unlisted-classes/>
+    <properties>
+      <!-- ENABLE THESE FOR Oracle -->
+      <property name="javax.jdo.option.ConnectionURL" value="jdbc:oracle:thin:@fn4.oracle.virtual.uniandes.edu.co:1521/prod"/>
+      <property name="javax.jdo.option.ConnectionDriverName" value="oracle.jdbc.driver.OracleDriver"/>
+      <property name="javax.jdo.option.ConnectionUserName" value="ISIS2304C03202120"/>
+      <property name="javax.jdo.option.ConnectionPassword" value="gnOpqbBFxlTt"/>
+      <property name="javax.jdo.option.Mapping" value="oracle"/>
+
+      <property name="datanucleus.schema.autoCreateAll" value="false"/>
+      <property name="datanucleus.query.sql.allowAll" value="true"/>
+    </properties>
+  </persistence-unit>
+
+</persistence>
